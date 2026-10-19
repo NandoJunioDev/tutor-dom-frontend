@@ -9,8 +9,8 @@ import { Component, OnDestroy, OnInit, output, signal } from '@angular/core';
              bg-[linear-gradient(160deg,#00724c_0%,#006a47_55%,#006a47_75%,#157d5a_100%)]"
     >
       <h1 class="flex gap-2 text-[44px] font-extrabold leading-none tracking-tight drop-shadow-md">
-        <span class="text-white">MART</span>
-        <span class="text-[#8ff5c4]">MINAS</span>
+        <span class="text-white">atacado</span>
+        <span class="text-[#8ff5c4]">dom</span>
       </h1>
 
       <p class="mt-3 text-[15px] font-semibold uppercase tracking-[0.28em] text-white/90">

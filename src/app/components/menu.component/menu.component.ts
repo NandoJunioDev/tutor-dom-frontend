@@ -1,8 +1,9 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, input, output, signal,inject } from '@angular/core';
 import { MenuItemLocalizarProdutoComponent } from '../menu-item-localizar-produto/menu-item-localizar-produto';
 import { MenuItemValidadeComponent } from '../menu-item-validade/menu-item-validade';
 import { MenuItemAnunciosComponent } from '../menu-item-anuncios/menu-item-anuncios';
 import { MenuItemCronogramasComponent } from '../menu-item-cronogramas/menu-item-cronogramas';
+import { Router } from '@angular/router';
 
 type Modulo = 'localizar' | 'validade' | 'anuncios' | 'cronogramas';
 
@@ -147,8 +148,17 @@ export class MenuComponent {
 
   modulo = signal<Modulo>('localizar');
 
-  selecionar(m: Modulo) {
+ 
+
+  private router = inject(Router)
+
+  selecionar(m:Modulo){
     this.modulo.set(m);
     this.moduloSelecionado.emit(m);
+    if(m==="localizar"){
+      this.router.navigate(["produtos"])
+    }
+
+    this.fechar.emit();
   }
 }

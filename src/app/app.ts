@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { SplashComponent } from './components/splash/splash';
 import { MenuComponent } from './components/menu.component/menu.component';
+import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SplashComponent, MenuComponent],
+  imports: [SplashComponent, MenuComponent,RouterOutlet],
   template: `
     @if (carregando()) {
       <app-splash (concluido)="carregando.set(false)" />
@@ -18,7 +20,9 @@ import { MenuComponent } from './components/menu.component/menu.component';
         >
           Abrir menu
         </button>
+        <router-outlet></router-outlet>
       </main>
+      
 
       <app-menu
         [aberto]="menuAberto()"

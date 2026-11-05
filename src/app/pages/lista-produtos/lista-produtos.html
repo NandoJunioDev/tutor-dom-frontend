@@ -1,0 +1,18 @@
+<div class="flex flex-col gap-3">
+  @for (produto of produtos(); track produto.id) {
+    <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3">
+
+      @if (produto.fotoUrl) {
+        <img [src]="produto.fotoUrl" alt="" class="h-16 w-16 rounded-xl object-cover" />
+      } @else {
+        <div class="h-16 w-16 rounded-xl bg-slate-100"></div>
+      }
+
+      <div class="flex-1">
+        <p class="font-semibold text-slate-900">{{ produto.nome }}</p>
+        <p class="text-sm text-slate-500">{{ produto.marcaDoProduto }}</p>
+      </div>
+
+    </div>
+  }
+</div>

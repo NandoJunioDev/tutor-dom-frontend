@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 export class ProdutoService {
   private http = inject(HttpClient)
 
-  private apiUrl= `${environment.apiUrl}`;
+  private apiUrl= `${environment.apiUrl}/produtos`;
 
 
 

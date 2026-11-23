@@ -34,5 +34,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   carregando = signal(true);
-  menuAberto = signal(true);
+  menuAberto = signal(false);
 }

@@ -1,6 +1,8 @@
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Produto } from '../../models/produto';
 import { ProdutoService } from './../../services/ProdutoService';
 import { Component,  inject,  signal } from '@angular/core';
+
 
 
 @Component({
@@ -11,11 +13,39 @@ import { Component,  inject,  signal } from '@angular/core';
 })
 export class ListaProdutos {
 
+  termoBuscado = signal('')
+rota = inject(ActivatedRoute)
+  constructor(){
+    const nome = this.rota.snapshot.queryParamMap.get('nome') ?? '';this.pesquisar(nome);
+
+
+
+    this.termoBuscado.set(nome)
+  }
+
   private produtoService = inject(ProdutoService)
 
   produtos=signal<Produto[]>([])
 
-  constructor(){
-    this.produtoService.listarTodos().subscribe(lista=>this.produtos.set(lista))
-  }
+
+ private router = inject(Router)
+
+  pesquisar(nome: string) {
+
+    if(nome.trim()=== ''){
+      this.produtos.set([])
+      return;
+    }
+  this.produtoService.buscarPortitulo(nome).subscribe(lista => this.produtos.set(lista));
+
+
+}
+
+abrirLotes(id:number){
+  this.router.navigate(['/produtos', id])
+}
+
+clickPaginaAnterior(){
+  this.router.navigate([''])
+}
 }

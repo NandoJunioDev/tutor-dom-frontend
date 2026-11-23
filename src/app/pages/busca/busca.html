@@ -1,0 +1,51 @@
+<div class="flex min-h-[85vh] flex-col items-center px-4">
+
+  <!-- Etiqueta da loja (fixa por enquanto) -->
+  <div class="mt-4 flex w-full max-w-md justify-end">
+    <span class="flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-800">
+      <span class="h-2 w-2 rounded-full bg-emerald-600"></span>
+      Loja 04 • Ativo
+    </span>
+  </div>
+
+  <!-- Logo -->
+  <div class="mt-24 flex items-center gap-3 text-emerald-700">
+    <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <polyline points="16 11 18 13 22 9"/>
+    </svg>
+    <span class="text-5xl font-bold tracking-tight">Tutor</span>
+  </div>
+  <p class="mt-2 text-sm text-slate-500">Onde está o produto?</p>
+
+  <!-- Campo de busca -->
+  <div class="mt-8 flex w-full max-w-md items-center gap-3 rounded-full bg-white px-5 py-4 shadow-lg ring-1 ring-slate-200 focus-within:ring-2 focus-within:ring-emerald-500">
+    <svg class="h-5 w-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="11" cy="11" r="8"/>
+      <path d="m21 21-4.3-4.3"/>
+    </svg>
+
+    <input  #nome (keyup.enter)="pesquisar(nome.value)"
+           type="text"
+           placeholder="Digite o nome do produto"
+           class="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-slate-400" />
+
+    <!-- Scanner: só o ícone, desativado até a gente fazer -->
+    <button disabled title="Scanner (em breve)" class="shrink-0 text-slate-300">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+        <path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+        <path d="M8 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/>
+      </svg>
+    </button>
+  </div>
+  <p class="mt-3 text-xs text-slate-400">Aperte Enter para buscar</p>
+
+  <!-- Rodapé -->
+  <footer class="mt-auto pt-10 text-center text-xs text-slate-400">
+    <p>• Sistema de Gestão de Abastecimento</p>
+    <p>Versão 0.1</p>
+  </footer>
+
+</div>

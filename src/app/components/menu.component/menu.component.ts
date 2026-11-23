@@ -148,7 +148,7 @@ export class MenuComponent {
 
   modulo = signal<Modulo>('localizar');
 
- 
+
 
   private router = inject(Router)
 
@@ -156,7 +156,7 @@ export class MenuComponent {
     this.modulo.set(m);
     this.moduloSelecionado.emit(m);
     if(m==="localizar"){
-      this.router.navigate(["produtos"])
+      this.router.navigate([""])
     }
 
     this.fechar.emit();

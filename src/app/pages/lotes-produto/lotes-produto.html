@@ -1,7 +1,17 @@
+
+
 <div class="mx-auto max-w-md p-4">
 
   @if (produto(); as p) {
+
+    <div class="flex items-center gap-3">
+      <button (click)="clickPaginaAnterior(p.nome)" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-xl text-slate-600">
+        ‹
+      </button>
+      <span class="text-sm font-medium text-slate-500">Lista De Produtos</span>
+    </div>
     <div class="rounded-2xl bg-emerald-50 p-4">
+
       <div class="flex gap-4">
 
         <!-- Foto (ou caixinha se não tiver) -->

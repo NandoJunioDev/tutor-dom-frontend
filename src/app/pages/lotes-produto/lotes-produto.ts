@@ -36,5 +36,9 @@ export class LotesProduto {
     this.router.navigate(['/lotes',idLote])
   }
 
+  clickPaginaAnterior(nome:string){
+    this.router.navigate(['/produtos'],{queryParams:{nome:nome}})
 
 }
+}
+
